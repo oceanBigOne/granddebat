@@ -67,23 +67,24 @@
                     </button>
                     </div>
 
-                </div>
-                <div class="mt-4">
-                <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
-                               :disabled="tagIds().length == 0 || loading"
-                               :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
-                <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
-                               :disabled="tagIds().length > 0 || loading"
-                               :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
-                               :text="'Sans réponse'"></action-button>
-                <action-button v-if="showBulb()" @clicked="sendLightbulb"
-                               :disabled="loading"
-                               :btnClass="'btn-warning'" :iconClass="'fa-lightbulb'"
-                               :text="'Marquer l\'idée'"></action-button>
-                <action-button v-if="!demo" @clicked="loadNext"
-                               :disabled="tagIds().length > 0 || loading" :style="'float: right;'"
-                               :btnClass="'btn-light'" :iconClass="'fa-step-forward'"
-                               :text="user == null ? 'Lire une autre' : 'Passer'"></action-button>
+
+                    <div class="mt-4">
+                    <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
+                                   :disabled="tagIds().length == 0 || loading"
+                                   :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
+                    <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
+                                   :disabled="tagIds().length > 0 || loading"
+                                   :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
+                                   :text="'Sans réponse'"></action-button>
+                    <action-button v-if="showBulb()" @clicked="sendLightbulb"
+                                   :disabled="loading"
+                                   :btnClass="'btn-warning'" :iconClass="'fa-lightbulb'"
+                                   :text="'Marquer l\'idée'"></action-button>
+                    <action-button v-if="!demo" @clicked="loadNext"
+                                   :disabled="tagIds().length > 0 || loading" :style="'float: right;'"
+                                   :btnClass="'btn-light'" :iconClass="'fa-step-forward'"
+                                   :text="user == null ? 'Lire une autre' : 'Passer'"></action-button>
+                    </div>
                 </div>
                 <div v-if="!canTagQuestion()">
                     <div v-if="isPreparing()" class="alert alert-warning">
