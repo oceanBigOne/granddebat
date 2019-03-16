@@ -73,6 +73,7 @@
                     <div class="mt-4">
                     <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
                                    :disabled="tagIds().length == 0 || loading"
+                                   :isResponsive=false
                                    :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
                     <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
                                    :disabled="tagIds().length > 0 || loading"

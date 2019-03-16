@@ -1,7 +1,7 @@
 <template>
     <button :class="'btn mybtn ' + btnClass" @click="onClick()" :disabled="disabled || loading">
         <i :class="loading ? 'fa fa-spinner fa-spin' : 'fa ' + iconClass"></i>
-        <span class="d-none d-sm-inline">{{ text }}</span>
+        <span :class="isResponsive ? 'd-none d-sm-inline' : ''">{{ text }}</span>
     </button>
 </template>
 
@@ -29,6 +29,11 @@
                 type: String,
                 required: true,
             },
+            isResponsive:{
+                type:Boolean,
+                required:false,
+                default:true
+            }
         },
         methods: {
             onClick() {
@@ -50,7 +55,14 @@
     @media only screen
     and (max-width: 576px) {
         .mybtn {
-            padding: 12px 18px;
+           padding: 12px 18px;
+        }
+    }
+
+    @media only screen
+    and (max-width: 320px) {
+        .mybtn {
+            padding: 8px 14px;
         }
     }
 
