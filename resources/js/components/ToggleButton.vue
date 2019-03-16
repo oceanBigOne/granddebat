@@ -12,7 +12,8 @@
         },
         methods: {
             getClass() {
-                return 'btn tag ' + (this.tag.checked ? 'on' : 'off') + ' ' + this.tag.color + (this.tag.is_custom ? ' italic' : '');
+                let bootstrapGrid="col-12 col-md-auto  mr-0 mr-md-2";
+                return bootstrapGrid+' btn tag ' + (this.tag.checked ? 'on' : 'off') + ' ' + this.tag.color + (this.tag.is_custom ? ' italic' : '');
             },
             onClick() {
                 this.$emit('tagToggled');
