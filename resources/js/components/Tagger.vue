@@ -56,30 +56,34 @@
                     </footer>
                 </blockquote>
                 <br/>
-                <div v-if="canTagQuestion()">
+                <div v-if="canTagQuestion()" class="d-flex flex-row flex-wrap">
                     <toggle-button v-for="(tag, index) in tags" :tag="tag" :key="index"
                                    @tagToggled="onTagToggled(tag.id)"></toggle-button>
-                    <button class="btn btn-light create-btn" data-toggle="modal" data-target="#modalCreate"
-                            :disabled="user == null || loading">
+                    <div class="p-1 col-12 col-sm-6 col-md-4 col-lg-3 d-flex text-left align-items-stretch">
+                         <button class="btn btn-block btn-light create-btn m-0" data-toggle="modal" data-target="#modalCreate"
+                                 :disabled="user == null || loading">
                         <i class="fa fa-plus"></i>
                         <span>Créer</span>
                     </button>
-                    <br/><br/>
-                    <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
-                                   :disabled="tagIds().length == 0 || loading"
-                                   :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
-                    <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
-                                   :disabled="tagIds().length > 0 || loading"
-                                   :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
-                                   :text="'Sans réponse'"></action-button>
-                    <action-button v-if="showBulb()" @clicked="sendLightbulb"
-                                   :disabled="loading"
-                                   :btnClass="'btn-warning'" :iconClass="'fa-lightbulb'"
-                                   :text="'Marquer l\'idée'"></action-button>
-                    <action-button v-if="!demo" @clicked="loadNext"
-                                   :disabled="tagIds().length > 0 || loading" :style="'float: right;'"
-                                   :btnClass="'btn-light'" :iconClass="'fa-step-forward'"
-                                   :text="user == null ? 'Lire une autre' : 'Passer'"></action-button>
+                    </div>
+
+                </div>
+                <div class="mt-4">
+                <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
+                               :disabled="tagIds().length == 0 || loading"
+                               :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
+                <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
+                               :disabled="tagIds().length > 0 || loading"
+                               :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
+                               :text="'Sans réponse'"></action-button>
+                <action-button v-if="showBulb()" @clicked="sendLightbulb"
+                               :disabled="loading"
+                               :btnClass="'btn-warning'" :iconClass="'fa-lightbulb'"
+                               :text="'Marquer l\'idée'"></action-button>
+                <action-button v-if="!demo" @clicked="loadNext"
+                               :disabled="tagIds().length > 0 || loading" :style="'float: right;'"
+                               :btnClass="'btn-light'" :iconClass="'fa-step-forward'"
+                               :text="user == null ? 'Lire une autre' : 'Passer'"></action-button>
                 </div>
                 <div v-if="!canTagQuestion()">
                     <div v-if="isPreparing()" class="alert alert-warning">
