@@ -26,6 +26,7 @@
 <style>
     .tag {
         cursor:pointer;
+        line-height:20px;
        /* margin-right: 10px;
         margin-bottom: 10px;
         padding-left: 20px;
@@ -46,7 +47,9 @@
         font-family:"Font Awesome 5 Free",serif;
         content: "\f111";
         font-weight:900;
+        font-size: 20px;
         color:#fff;
+        margin-right:5px;
     }
     .tag.on:before{
         float: left;

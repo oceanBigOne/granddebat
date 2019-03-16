@@ -56,15 +56,17 @@
                     </footer>
                 </blockquote>
                 <br/>
-                <div v-if="canTagQuestion()" class="d-flex flex-row flex-wrap">
-                    <toggle-button v-for="(tag, index) in tags" :tag="tag" :key="index"
-                                   @tagToggled="onTagToggled(tag.id)"></toggle-button>
-                    <div class="p-1 col-12 col-sm-6 col-md-4 col-lg-3 d-flex text-left align-items-stretch">
-                         <button class="btn btn-block btn-light create-btn m-0" data-toggle="modal" data-target="#modalCreate"
-                                 :disabled="user == null || loading">
-                        <i class="fa fa-plus"></i>
-                        <span>Créer</span>
-                    </button>
+                <div v-if="canTagQuestion()" >
+                    <div class="d-flex flex-row flex-wrap">
+                        <toggle-button v-for="(tag, index) in tags" :tag="tag" :key="index"
+                                       @tagToggled="onTagToggled(tag.id)"></toggle-button>
+                        <div class="p-1 col-12 col-sm-6 col-md-4 col-lg-3 d-flex text-left align-items-stretch">
+                             <button class="btn btn-block btn-light create-btn m-0" data-toggle="modal" data-target="#modalCreate"
+                                     :disabled="user == null || loading">
+                                <i class="fa fa-plus"></i>
+                                <span>Créer</span>
+                            </button>
+                        </div>
                     </div>
 
 
