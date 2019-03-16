@@ -71,16 +71,18 @@
 
 <div style="padding:1.25rem;">
                     <div class="mt-4 row">
-                        <div class="col-5 col-sm-auto p-0 pr-sm-1 pr-md-2">
+                        <div class="col-12 col-sm-auto p-0 pr-sm-1 pr-md-2">
                     <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
                                    :disabled="tagIds().length == 0 || loading"
                                    :isResponsive=false
+                                   class="btn-block"
                                    :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
                         </div>
-                        <div class="col-7 col-sm-auto p-0  pr-sm-1 pr-md-2 text-right">
+                        <div class="col-12 col-sm-auto p-0  pr-sm-1 pr-md-2 text-right mt-2  mt-sm-0">
                     <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
                                    :disabled="tagIds().length > 0 || loading"
                                    :isResponsive=false
+                                   class="btn-block"
                                    :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
                                    :text="'Sans réponse'"></action-button>
                         </div>
