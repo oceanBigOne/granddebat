@@ -71,14 +71,14 @@
 
 <div style="padding:1.25rem;">
                     <div class="mt-4 row">
-                        <div class="col-12 col-sm-auto p-0 pr-sm-1 pr-md-2">
+                        <div class="col-12 col-sm-6 col-lg-auto p-0 pr-sm-1 pr-md-2">
                     <action-button ref="saveButton" v-if="user != null || demo" @clicked="sendSave"
                                    :disabled="tagIds().length == 0 || loading"
                                    :isResponsive=false
                                    class="btn-block"
                                    :btnClass="'btn-primary'" :iconClass="'fa-check'" :text="'Valider'"></action-button>
                         </div>
-                        <div class="col-12 col-sm-auto p-0  pr-sm-1 pr-md-2 text-right mt-2  mt-sm-0">
+                        <div class="col-12 col-sm-6 col-lg-auto p-0   pr-lg-2 text-right mt-2  mt-sm-0">
                     <action-button ref="noanswerButton" v-if="user != null || demo" @clicked="sendNoanswer"
                                    :disabled="tagIds().length > 0 || loading"
                                    :isResponsive=false
@@ -86,18 +86,18 @@
                                    :btnClass="'btn-secondary'" :iconClass="'fa-times-circle'"
                                    :text="'Sans réponse'"></action-button>
                         </div>
-                        <div class="col-5 col-sm-auto p-0  pr-sm-1 pr-md-2 mt-4  mt-sm-0"  > <!-- v-if="showBulb()" -->
+                        <div class="col-5 col-sm-6 col-lg-auto p-0   pr-lg-2 mt-4  mt-lg-0"  > <!-- v-if="showBulb()" -->
                     <action-button @clicked="sendLightbulb"
                                    :disabled="loading"
-
                                    :btnClass="'btn-warning'" :iconClass="'fa-lightbulb'"
                                    :text="'Marquer l\'idée'"></action-button>
                         </div>
-                        <div class="col-7 col-sm p-0 mt-4 mt-sm-0 align-self-end ">
+                        <div class="col-7 col-sm-6 col-lg p-0 mt-4 mt-lg-0 align-self-end ">
                     <action-button v-if="!demo" @clicked="loadNext"
                                    :disabled="tagIds().length > 0 || loading" :style="'float: right;'"
                                    :btnClass="'btn-light'" :iconClass="'fa-step-forward'"
                                    responsiveLevel="md"
+
                                    :text="user == null ? 'Lire une autre' : 'Passer'"></action-button>
                         </div>
                     </div>
