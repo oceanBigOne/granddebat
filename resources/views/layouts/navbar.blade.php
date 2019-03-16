@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel{{ isset($compact) ? ' d-none d-lg-block' : ''}}">
+<nav class="navbar navbar-expand-md navbar-light navbar-laravel{{ isset($compact) ? '  d-lg-block' : ''}}">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="/logo.png" alt="tag" height="16px"/>
